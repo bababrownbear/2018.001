@@ -11,6 +11,7 @@ namespace Backend.Controllers
     [Route("api/Organization")]
     public class OrganizationController : Controller
     {
-
+        [HttpGet]
+        public 
     }
 }
