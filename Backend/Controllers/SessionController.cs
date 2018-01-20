@@ -10,22 +10,16 @@ namespace Backend.Controllers
 {
     [Produces("application/json")]
     [Route("api/Login")]
-    public class LoginController : Controller
+    public class SessionController : Controller
     {
-        //// GET: api/Login
-        //[HttpGet]
-        //public IEnumerable<string> Get()
-        //{
-        //    return new string[] { "value1", "value2" };
-        //}
+        // get: api/Login
+        [HttpGet]
+        public bool RefreshSession()
+        {
+            //_sessionBusiness.RefreshSession();
+            return true;
+        }
 
-        //// GET: api/Login/5
-        //[HttpGet("{id}", Name = "Get")]
-        //public string Get(int id)
-        //{
-        //    return "value";
-        //}
-        
         // POST: api/Login
         [HttpPost]
         public void Post([FromBody]LoginModel loginModel)

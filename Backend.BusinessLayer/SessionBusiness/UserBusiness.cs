@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Backend.BusinessLayer.LoginBusiness
+namespace Backend.BusinessLayer
 {
-    public class LoginBusiness : ILoginBusiness
+    public class UserBusiness : IUserBusiness
     {
         public bool GetUserByUsername(string Username)
         {
