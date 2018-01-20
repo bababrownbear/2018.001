@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Backend.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -11,24 +12,37 @@ namespace Backend.Controllers
     [Route("api/Login")]
     public class LoginController : Controller
     {
-        // GET: api/Login
-        [HttpGet]
-        public IEnumerable<string> Get()
-        {
-            return new string[] { "value1", "value2" };
-        }
+        //// GET: api/Login
+        //[HttpGet]
+        //public IEnumerable<string> Get()
+        //{
+        //    return new string[] { "value1", "value2" };
+        //}
 
-        // GET: api/Login/5
-        [HttpGet("{id}", Name = "Get")]
-        public string Get(int id)
-        {
-            return "value";
-        }
+        //// GET: api/Login/5
+        //[HttpGet("{id}", Name = "Get")]
+        //public string Get(int id)
+        //{
+        //    return "value";
+        //}
         
         // POST: api/Login
         [HttpPost]
-        public void Post([FromBody]string value)
+        public void Post([FromBody]LoginModel loginModel)
         {
+            if(string.IsNullOrEmpty(loginModel.Username) 
+                || string.IsNullOrEmpty(loginModel.Password))
+            {
+                // return bad boy
+            }
+
+            // var user = _userDataAccesLayer.GetUserByUsername()
+            // if(loginModel.Password == user.Password) 
+            // {
+            //
+            // }
+
+            // return what we need
         }
         
         // PUT: api/Login/5
