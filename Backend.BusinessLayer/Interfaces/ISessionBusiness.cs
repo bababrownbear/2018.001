@@ -6,6 +6,8 @@ namespace Backend.BusinessLayer
 {
     public interface ISessionBusiness
     {
-        bool RefreshSession(string Username);
+        bool RefreshSession(Guid Token);
+
+        Guid Login(string Username);
     }
 }

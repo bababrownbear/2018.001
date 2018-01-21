@@ -10,5 +10,10 @@ namespace Backend.BusinessLayer
         {
             return true;
         }
+
+        public bool IsValidPassword(string Username, string Password)
+        {
+            return true;
+        }
     }
 }

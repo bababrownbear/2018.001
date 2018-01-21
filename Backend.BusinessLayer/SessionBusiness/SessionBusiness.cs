@@ -6,9 +6,14 @@ namespace Backend.BusinessLayer
 {
     public class SessionBusiness : ISessionBusiness
     {
-        public bool RefreshSession(string Username)
+        public bool RefreshSession(Guid Token)
         {
             return true;
+        }
+
+        public Guid Login(string Username)
+        {
+            return Guid.NewGuid();
         }
     }
 }

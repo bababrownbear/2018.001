@@ -7,7 +7,7 @@ namespace Backend.UnitTests
     [TestClass]
     public class UserBusinessTests
     {
-        private UserBusiness _userBusiness;
+        private readonly UserBusiness _userBusiness;
 
         public UserBusinessTests()
         {
@@ -19,7 +19,15 @@ namespace Backend.UnitTests
         [TestMethod]
         public void ShouldGetUserByUsername()
         {
-            var result = _userBusiness.GetUserByUsername("test");
+            var result = _userBusiness.GetUserByUsername(It.IsAny<string>());
+
+            Assert.IsTrue(result);
+        }
+
+        [TestMethod]
+        public void ShouldReturnTrueForValidPassword()
+        {
+            var result = _userBusiness.IsValidPassword(It.IsAny<string>(), It.IsAny<string>());
 
             Assert.IsTrue(result);
         }

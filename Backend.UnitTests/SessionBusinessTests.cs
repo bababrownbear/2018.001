@@ -1,6 +1,7 @@
 using Backend.BusinessLayer;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
+using System;
 
 namespace Backend.UnitTests
 {
@@ -19,9 +20,17 @@ namespace Backend.UnitTests
         [TestMethod]
         public void ShouldRefreshSession()
         {
-            var result = _sessionBusiness.RefreshSession("test");
+            var result = _sessionBusiness.RefreshSession(Guid.NewGuid());
 
             Assert.IsTrue(result);
+        }
+
+        [TestMethod]
+        public void ShouldReturnTokenAfterLoggingIn()
+        {
+            var result = _sessionBusiness.Login(It.IsAny<string>());
+
+            Assert.IsInstanceOfType(result,typeof(Guid));
         }
     }
 }
